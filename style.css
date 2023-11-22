@@ -1,0 +1,47 @@
+body {
+    box-sizing: border-box;
+}
+.calculator {
+    height: 560px;
+    width: 410px;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    border: 5px solid blue;
+}
+
+ .btn, .clearbtn, .resultbtn, .operator{
+    width: 100px;
+    height: 100px;
+    border: 1px black solid;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.screen {
+    width: 400px;
+    height: 100px;
+    border: 5px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    align-items: end;
+    margin: 20px;
+    
+}
+
+.operations  {
+    margin: 10px;
+    font-size: 40px;
+}
+
+.display {
+    display: none;
+}
+
+.btn:hover, .clearbtn:hover, .resultbtn:hover, .operator:hover {
+    background-color: aqua;
+}
