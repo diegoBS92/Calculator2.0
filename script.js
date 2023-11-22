@@ -5,6 +5,7 @@ let displayresult = document.querySelector('.displayresult')
 let btns = document.querySelectorAll('.btn')
 let operators = document.querySelectorAll('.operator')
 let resultbtn = document.querySelector('.resultbtn')
+let clearbtn = document.querySelector('.clearbtn')
 
 let numberOne 
 let operator 
@@ -18,8 +19,8 @@ Array.from(btns).forEach(item => item.addEventListener('click', (e) => {
 }))
 Array.from(operators).forEach(item => item.addEventListener('click', e => {
     numberOne ? numberTwo = display.textContent : numberOne = display.textContent
-    if (numberTwo){
-        if(!result) {
+    if (!numberTwo == undefined){
+        if(result == undefined) {
             operate(numberOne, operator, numberTwo)
             displayresult.textContent = result
         } else {
@@ -34,13 +35,23 @@ Array.from(operators).forEach(item => item.addEventListener('click', e => {
 )
 resultbtn.addEventListener('click', function() {
     numberTwo = display.textContent
-    if (!result) {
+    if (result == undefined) {
         operate(numberOne, operator, numberTwo)
     } else {
         operate(result, operator, numberTwo)
     }
     displayresult.textContent = result
     display.textContent = ''
+
+})
+clearbtn.addEventListener('click', () => {
+    numberOne = undefined;
+    operator = undefined;
+    numberTwo = undefined  
+    result = undefined 
+    display.textContent = ''
+    displayoperator.textContent = ''
+    displayresult.textContent = '0'
 
 })
 
