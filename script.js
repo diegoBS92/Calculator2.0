@@ -19,7 +19,7 @@ Array.from(btns).forEach(item => item.addEventListener('click', (e) => {
 }))
 Array.from(operators).forEach(item => item.addEventListener('click', e => {
     numberOne ? numberTwo = display.textContent : numberOne = display.textContent
-    if (!numberTwo == undefined){
+    if (numberTwo){
         if(result == undefined) {
             operate(numberOne, operator, numberTwo)
             displayresult.textContent = result
